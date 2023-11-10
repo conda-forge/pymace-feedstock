@@ -30,6 +30,7 @@ requirements:
     - prettytable
     - matplotlib-base
     - pandas
+    - matscipy
 
 test:
   imports:

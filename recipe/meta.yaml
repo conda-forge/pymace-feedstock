@@ -31,6 +31,12 @@ requirements:
     - matplotlib-base
     - pandas
     - matscipy
+    - configargparse
+    - gitpython
+    - h5py
+    - python-hostlist
+    - torchmetrics
+    - tqdm
 
 test:
   imports:

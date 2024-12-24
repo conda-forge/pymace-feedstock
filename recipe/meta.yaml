@@ -1,5 +1,5 @@
 {% set name = "pymace" %}
-{% set version = "0.3.6" %}
+{% set version = "0.3.9" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/ACEsuit/mace/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 267c1f07866e4ca2c2c6eaaf726a6e4ccdb2b97c77d6eeb7e96a741f79f7b697
+  sha256: 4e122b7492fe9018e4802ae8d781664ffbf39342e1ee67b6392c6c8f0a34de36
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
@@ -38,6 +38,8 @@ requirements:
     - python-hostlist
     - torchmetrics
     - tqdm
+    - cuequivariance-torch
+    - pyyaml
 
 test:
   imports:

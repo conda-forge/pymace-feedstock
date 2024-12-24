@@ -39,6 +39,8 @@ requirements:
     - python-hostlist
     - torchmetrics
     - tqdm
+    - cuequivariance-torch
+    - pyyaml
 
 test:
   imports:

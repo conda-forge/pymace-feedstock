@@ -24,7 +24,7 @@ requirements:
     - python >={{ python_min }}
     - pytorch >=1.12
     - e3nn =0.4.4
-    - numpy
+    - numpy <2.0
     - opt_einsum
     - ase
     - torch-ema

@@ -11,19 +11,20 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
   noarch: python
 
 requirements:
   build:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - pytorch >=1.12
     - e3nn =0.4.4
-    - numpy
+    - numpy <2.0
     - opt_einsum
     - ase
     - torch-ema
@@ -43,6 +44,7 @@ test:
     - mace
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
 

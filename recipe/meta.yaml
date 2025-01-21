@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/ACEsuit/mace/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 4e122b7492fe9018e4802ae8d781664ffbf39342e1ee67b6392c6c8f0a34de36
+  sha256: 12524c0e8e5e414b8fd848369cfc9d46242f97ee5b1b0520e8484141cb850b39
 
 build:
   script: {{ PYTHON }} -m pip install . -vv

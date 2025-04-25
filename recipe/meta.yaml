@@ -41,6 +41,8 @@ requirements:
     - tqdm
     - cuequivariance-torch
     - pyyaml
+    - python-lmdb
+    - orjson
 
 test:
   imports:

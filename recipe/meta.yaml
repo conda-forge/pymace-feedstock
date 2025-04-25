@@ -1,5 +1,5 @@
 {% set name = "pymace" %}
-{% set version = "0.3.10" %}
+{% set version = "0.3.12" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/ACEsuit/mace/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 12524c0e8e5e414b8fd848369cfc9d46242f97ee5b1b0520e8484141cb850b39
+  sha256: 167f3c2bb173f9f3441b052f5030a389b2d8f6ee087aba1154091e95d7ac01b4
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
@@ -25,7 +25,7 @@ requirements:
     - python >={{ python_min }}
     - pytorch >=1.12
     - e3nn =0.4.4
-    - numpy <2.0
+    - numpy
     - opt_einsum
     - ase
     - torch-ema

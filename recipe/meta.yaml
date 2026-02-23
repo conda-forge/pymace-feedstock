@@ -1,5 +1,5 @@
 {% set name = "pymace" %}
-{% set version = "0.3.14" %}
+{% set version = "0.3.15" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/ACEsuit/mace/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 79a9ee441185b3f636689eee1b26c302029a8dee9359cd5b6713564d0be9fb7e
+  sha256: f367fea84fd05756434b7d9efe1bdfc9f48ac2b9ef836060d635bcb163e0c4ae
 
 build:
   script: {{ PYTHON }} -m pip install . -vv

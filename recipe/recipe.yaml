@@ -3,7 +3,6 @@ schema_version: 1
 context:
   name: pymace
   version: "0.3.16"
-  python_min: "3.10"
 
 package:
   name: ${{ name|lower }}
@@ -21,7 +20,7 @@ build:
 requirements:
   build:
   host:
-    - python 3.10.*
+    - python ${{ python_min }}.*
     - pip
     - setuptools
   run:
@@ -52,7 +51,9 @@ tests:
       imports:
         - mace
       pip_check: true
-      python_version: ${{ python_min }}
+      python_version:
+        - ${{ python_min }}
+        - "*"
 
 about:
   summary: MACE - Fast and accurate machine learning interatomic potentials with higher order equivariant message passing.

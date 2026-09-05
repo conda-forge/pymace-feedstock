@@ -1,0 +1,74 @@
+schema_version: 1
+
+context:
+  name: pymace
+  version: "0.3.16"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://github.com/ACEsuit/mace/archive/refs/tags/v${{ version }}.tar.gz
+  sha256: 9bd8ba325ae641539e3c499b88e3e0cdb5e6d0611776bcb6d4abc0f15010000b
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  build:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools
+  run:
+    - python >=${{ python_min }}
+    - pytorch >=1.12
+    - e3nn =0.4.4
+    - numpy
+    - opt_einsum
+    - ase
+    - torch-ema
+    - prettytable
+    - matplotlib-base
+    - pandas
+    - matscipy
+    - configargparse
+    - gitpython
+    - h5py
+    - python-hostlist
+    - torchmetrics
+    - tqdm
+    - cuequivariance-torch
+    - pyyaml
+    - python-lmdb
+    - orjson
+
+tests:
+  - python:
+      imports:
+        - mace
+      pip_check: true
+      python_version:
+        - ${{ python_min }}
+        - "*"
+
+about:
+  summary: MACE - Fast and accurate machine learning interatomic potentials with higher order equivariant message passing.
+  description: |
+    MACE provides fast and accurate machine learning interatomic
+    potentials with higher order equivariant message passing. This
+    repository contains the MACE reference implementation developed
+    by Ilyes Batatia, Gregor Simm, and David Kovacs.
+  license: MIT
+  license_file: LICENSE.md
+  homepage: https://github.com/ACEsuit/mace
+  repository: https://github.com/ACEsuit/mace
+  documentation: https://github.com/ACEsuit/mace
+
+extra:
+  recipe-maintainers:
+    - fxcoudert
+    - jan-janssen
